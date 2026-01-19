@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Pump</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at top left, #2b145a, #0b0614 60%);
+      color: #fff;
+    }
+
+    /* NAVBAR */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 64px;
+    }
+
+    .site-name {
+      font-size: 22px;
+      font-weight: 700;
+      color: #b88cff;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      padding: 80px 64px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #b88cff;
+    }
+
+    .hero p {
+      max-width: 520px;
+      line-height: 1.6;
+      color: #cfcfe6;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 16px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #9b5cff, #c77dff);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 0 25px rgba(155,92,255,0.5);
+    }
+
+    .btn-outline {
+      border: 2px solid #9b5cff;
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* IMAGE CARD */
+    .card {
+      background: linear-gradient(180deg, #1b0f30, #12091f);
+      border-radius: 20px;
+      padding: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 14px;
+      display: block;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      header {
+        padding: 24px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 48px 24px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="site-name">Project Pump</div>
+    <nav>
+      <a href="#">Information</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1><span>Project</span> Pump</h1>
+      <p>
+        Re-experience Chapter 4 Season 2! We host EU Lategame Infinite
+        Respawns with Arena. Drop in with powerful pre-set loadouts,
+        stacked gear, and intense endgame action.
+      </p>
+
+      <div class="buttons">
+        <a href="https://r2.ploosh.dev/24.20.zip" class="btn-primary">
+          Download 24.20
+        </a>
+        <a href="#" class="btn-outline">Download Launcher</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://i.imgur.com/6XK8ZgP.png" alt="Game Image">
+    </div>
+  </section>
+
+</body>
+</html>
