@@ -72,8 +72,41 @@
     main {
       max-width: 1000px;
       margin: 0 auto;
-      padding: 120px 64px;
+      padding: 80px 64px;
       text-align: center;
+    }
+
+    .home-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .home-text {
+      max-width: 500px;
+    }
+
+    .home-text h1 {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    .home-text h1 span {
+      color: #b88cff;
+    }
+
+    .home-text p {
+      line-height: 1.7;
+      font-size: 18px;
+      color: #cfcfe6;
+    }
+
+    .home-image img {
+      max-width: 400px;
+      width: 100%;
+      border-radius: 16px;
     }
 
     .archive-buttons {
@@ -111,7 +144,20 @@
       }
 
       main {
-        padding: 80px 24px;
+        padding: 60px 24px;
+      }
+
+      .home-content {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .home-text h1 {
+        font-size: 36px;
+      }
+
+      .home-image img {
+        max-width: 300px;
       }
     }
   </style>
@@ -119,7 +165,7 @@
 <body>
 
   <header>
-    <div class="title">Ghost cuberts ogfn center</div>
+    <div class="title">Project Builds</div>
 
     <div class="nav-buttons">
       <button onclick="showSection('home')">Home</button>
@@ -138,10 +184,17 @@
   <main>
     <!-- HOME SECTION -->
     <div id="home">
-      <h1>Welcome to Ghost cuberts ogfn center where you  will find build archives modded reload backend with modded commands with arena join the discord to get it!  </h1>
-      <p>
-        welcome to Ghost cuberts ogfn center!
-      </p>
+      <div class="home-content">
+        <div class="home-text">
+          <h1>Welcome to <span>Project Builds</span></h1>
+          <p>
+            This is the main page. Click the "Builds Archives" button above to access all available builds. Join the Discord to stay up-to-date!
+          </p>
+        </div>
+        <div class="home-image">
+          <img src="https://tse4.mm.bing.net/th/id/OIP.BJ3FmQgEd52Lr4J4DGcEjgHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Project Builds Image">
+        </div>
+      </div>
     </div>
 
     <!-- BUILDS ARCHIVES SECTION -->
@@ -164,7 +217,7 @@
       document.getElementById(sectionId).classList.remove('hidden');
     }
 
-    // Show home section by default when page loads
+    // Show home section by default
     window.onload = function() {
       showSection('home');
     };
