@@ -44,8 +44,8 @@
       flex-wrap: wrap;
     }
 
-    .nav-buttons button, .nav-buttons a {
-      text-decoration: none;
+    .nav-buttons button,
+    .nav-buttons a {
       padding: 12px 26px;
       border-radius: 999px;
       font-weight: 600;
@@ -53,11 +53,14 @@
       border: 2px solid #9b5cff;
       cursor: pointer;
       background: none;
-      transition: all 0.2s ease;
+      transition: all 0.25s ease;
+      text-decoration: none;
     }
 
-    .nav-buttons button:hover, .nav-buttons a:hover {
+    .nav-buttons button:hover,
+    .nav-buttons a:hover {
       background: #9b5cff;
+      transform: translateY(-2px);
     }
 
     .discord {
@@ -83,6 +86,7 @@
       text-align: center;
     }
 
+    /* HOME */
     .home-content {
       display: flex;
       align-items: center;
@@ -116,6 +120,7 @@
       border-radius: 16px;
     }
 
+    /* ARCHIVES */
     .archive-buttons {
       display: flex;
       justify-content: center;
@@ -131,33 +136,30 @@
       color: #fff;
       text-decoration: none;
       border: 2px solid #b88cff;
-      transition: all 0.2s ease;
-      display: inline-block;
+      transition: all 0.25s ease;
     }
 
     .archive-buttons a:hover {
       background: #b88cff;
+      transform: translateY(-2px);
     }
 
-    /* YOUTUBE SECTION */
-    #youtube h1 {
-      margin-bottom: 16px;
-    }
-
+    /* YOUTUBE */
     .channel-link {
       display: inline-block;
       padding: 12px 28px;
-      margin-bottom: 24px;
+      margin: 24px 0;
       font-weight: 600;
       color: #fff;
       border: 2px solid #FF0000;
       border-radius: 999px;
       text-decoration: none;
-      transition: all 0.2s ease;
+      transition: all 0.25s ease;
     }
 
     .channel-link:hover {
       background: #FF0000;
+      transform: translateY(-2px);
     }
 
     .video-grid {
@@ -167,11 +169,20 @@
       margin-top: 10px;
     }
 
+    /* VIDEO CARD + HOVER ANIMATION */
     .video-grid iframe {
       width: 100%;
       height: 200px;
+      border-radius: 14px;
       border: none;
-      border-radius: 12px;
+      background: #000;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    }
+
+    .video-grid iframe:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(184, 140, 255, 0.6);
     }
 
     /* HIDDEN */
@@ -189,17 +200,8 @@
         padding: 60px 24px;
       }
 
-      .home-content {
-        flex-direction: column;
-        gap: 20px;
-      }
-
       .home-text h1 {
         font-size: 36px;
-      }
-
-      .home-image img {
-        max-width: 300px;
       }
 
       .video-grid iframe {
@@ -208,89 +210,79 @@
     }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <div class="title">Ghost cuberts ogfn center</div>
+<header>
+  <div class="title">Ghost cuberts ogfn center</div>
 
-    <div class="nav-buttons">
-      <button onclick="showSection('home')">Home</button>
-      <button onclick="showSection('archives')">Builds Archives</button>
-      <button onclick="showSection('youtube')" class="youtube">YouTube</button>
-      <a
-        href="https://discord.gg/5cezKQCuTu"
-        class="discord"
-        target="_blank"
-        rel="noopener"
-      >
-        Discord
-      </a>
-    </div>
-  </header>
+  <div class="nav-buttons">
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('archives')">Builds Archives</button>
+    <button onclick="showSection('youtube')" class="youtube">YouTube</button>
+    <a href="https://discord.gg/5cezKQCuTu" class="discord" target="_blank">Discord</a>
+  </div>
+</header>
 
-  <main>
-    <!-- HOME SECTION -->
-    <div id="home">
-      <div class="home-content">
-        <div class="home-text">
-          <h1>Welcome to <span>Ghost cuberts ogfn center</span></h1>
-          <p>
-            This is the main page. Click the "Builds Archives" button above to access all available builds. Join the Discord to stay up-to-date!
-          </p>
-        </div>
-        <div class="home-image">
-          <img src="https://tse4.mm.bing.net/th/id/OIP.BJ3FmQgEd52Lr4J4DGcEjgHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Project Builds Image">
-        </div>
+<main>
+
+  <!-- HOME -->
+  <div id="home">
+    <div class="home-content">
+      <div class="home-text">
+        <h1>Welcome to <span>Ghost cuberts ogfn center</span></h1>
+        <p>
+          This is the main page. Click the "Builds Archives" button above to access all available builds.
+        </p>
+      </div>
+      <div class="home-image">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.BJ3FmQgEd52Lr4J4DGcEjgHaEK" alt="">
       </div>
     </div>
+  </div>
 
-    <!-- BUILDS ARCHIVES SECTION -->
-    <div id="archives" class="hidden">
-      <h1>Builds Archives</h1>
-      <div class="archive-buttons">
-        <a href="https://builds.cbn.lol/builds" target="_blank" rel="noopener">CBN Builds</a>
-        <a href="https://builds.fortforge.dev/builds" target="_blank" rel="noopener">fortforge.dev</a>
-        <a href="https://github.com/n6617x/Fortnitebuilds" target="_blank" rel="noopener">n6617x/Fortnitebuilds</a>
-        <a href="https://github.com/andr1ww/Fortnitebuilds" target="_blank" rel="noopener">andr1ww/Fortnitebuilds</a>
-        <a href="https://github.com/llamaqwerty/fortnite-builds-archive" target="_blank" rel="noopener">llamaqwerty Archive</a>
-      </div>
+  <!-- ARCHIVES -->
+  <div id="archives" class="hidden">
+    <h1>Builds Archives</h1>
+    <div class="archive-buttons">
+      <a href="https://builds.cbn.lol/builds" target="_blank">CBN Builds</a>
+      <a href="https://builds.fortforge.dev/builds" target="_blank">fortforge.dev</a>
+      <a href="https://github.com/n6617x/Fortnitebuilds" target="_blank">n6617x</a>
+      <a href="https://github.com/andr1ww/Fortnitebuilds" target="_blank">andr1ww</a>
+      <a href="https://github.com/llamaqwerty/fortnite-builds-archive" target="_blank">llamaqwerty</a>
     </div>
+  </div>
 
-    <!-- YOUTUBE SECTION -->
-    <div id="youtube" class="hidden">
-      <h1>Ghost Cubert YouTube Channel</h1>
+  <!-- YOUTUBE -->
+  <div id="youtube" class="hidden">
+    <h1>Ghost Cubert YouTube Channel</h1>
 
-      <!-- Channel link -->
-      <a href="https://youtube.com/@ghostcubert?si=ds7qkO-lEWbBrLnJ" target="_blank" class="channel-link">
-        Visit Channel
-      </a>
+    <a href="https://youtube.com/@ghostcubert" target="_blank" class="channel-link">
+      Visit Channel
+    </a>
 
-      <div class="video-grid">
-        <iframe src="https://youtu.be/U_41Y87YqW8?si=xUTd8_Zt_R5OJcSy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe src="https://youtu.be/7fxICX3HTRQ?si=Hne-2oOq7CurM633" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe src="https://youtu.be/fADvIPW-Bnk?si=0ZgYWvOlEwXConc0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe src="https://youtu.be/drAeAaO8Cks?si=N7zBNgNusmUfbTop" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe src="https://youtu.be/A5iYT0Q5MD4?si=IHvBkmgC96IIaCye" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe src="https://youtu.be/U_41Y87YqW8?si=Ifsbb4ckwPIbTG2A" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe src="https://youtu.be/C4vdYg6llxw?si=xV5E8K4vSYg1FoO5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
+    <div class="video-grid">
+      <iframe src="https://www.youtube.com/embed/U_41Y87YqW8" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/7fxICX3HTRQ" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/fADvIPW-Bnk" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/drAeAaO8Cks" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/A5iYT0Q5MD4" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/C4vdYg6llxw" allowfullscreen></iframe>
     </div>
+  </div>
 
-  </main>
+</main>
 
-  <script>
-    function showSection(sectionId) {
-      document.getElementById('home').classList.add('hidden');
-      document.getElementById('archives').classList.add('hidden');
-      document.getElementById('youtube').classList.add('hidden');
+<script>
+  function showSection(id) {
+    document.getElementById('home').classList.add('hidden');
+    document.getElementById('archives').classList.add('hidden');
+    document.getElementById('youtube').classList.add('hidden');
+    document.getElementById(id).classList.remove('hidden');
+  }
 
-      document.getElementById(sectionId).classList.remove('hidden');
-    }
-
-    window.onload = function() {
-      showSection('home');
-    };
-  </script>
+  window.onload = () => showSection('home');
+</script>
 
 </body>
 </html>
